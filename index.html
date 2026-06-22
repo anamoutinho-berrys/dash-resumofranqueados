@@ -18,111 +18,43 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background: #dde6f5; min-height: 100vh; }
-
-.setup-bar {
-  background: #08173d;
-  padding: 8px 16px;
-  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-}
+.setup-bar { background: #08173d; padding: 8px 16px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .setup-bar label { color: #7fa8e0; font-size: 12px; font-weight: 700; white-space: nowrap; }
-.setup-bar input {
-  flex: 1; min-width: 180px;
-  padding: 6px 12px; border-radius: 8px; border: none;
-  font-size: 13px; background: #142150; color: white;
-}
+.setup-bar input { flex: 1; min-width: 180px; padding: 6px 12px; border-radius: 8px; border: none; font-size: 13px; background: #142150; color: white; }
 .setup-bar input::placeholder { color: #4a6aaa; }
-.setup-bar select {
-  padding: 6px 10px; border-radius: 8px; border: none;
-  font-size: 12px; background: #142150; color: white; cursor: pointer;
-}
-.btn-connect {
-  background: var(--blue3); color: white; border: none;
-  padding: 6px 18px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer;
-}
+.setup-bar select { padding: 6px 10px; border-radius: 8px; border: none; font-size: 12px; background: #142150; color: white; cursor: pointer; }
+.btn-connect { background: var(--blue3); color: white; border: none; padding: 6px 18px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; }
 .btn-connect:hover { background: #3a7fcf; }
-
-.tabs-wrap {
-  background: white; border-bottom: 2px solid #d8e4f5;
-  overflow-x: auto; white-space: nowrap; padding: 0 14px;
-  position: sticky; top: 0; z-index: 10;
-  box-shadow: 0 2px 10px rgba(0,0,0,.08);
-}
-.tab {
-  display: inline-block; padding: 11px 15px; cursor: pointer;
-  font-size: 12px; font-weight: 500; color: var(--text2);
-  border-bottom: 3px solid transparent; transition: all .15s; user-select: none;
-}
+.tabs-wrap { background: white; border-bottom: 2px solid #d8e4f5; overflow-x: auto; white-space: nowrap; padding: 0 14px; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+.tab { display: inline-block; padding: 11px 15px; cursor: pointer; font-size: 12px; font-weight: 500; color: var(--text2); border-bottom: 3px solid transparent; transition: all .15s; user-select: none; }
 .tab:hover { color: var(--blue); }
 .tab.active { color: var(--blue); border-bottom-color: var(--blue); font-weight: 700; }
-
 .page { max-width: 440px; margin: 0 auto; padding: 16px 12px 36px; }
-
-.dash-header {
-  background: linear-gradient(145deg, #08173d 0%, #112a72 45%, #1e4db5 100%);
-  border-radius: 24px;
-  padding: 22px 20px 22px;
-  margin-bottom: 14px;
-  position: relative;
-  overflow: hidden;
-  min-height: 200px;
-}
-.dash-header::before {
-  content: '❄  ❄  ❄';
-  position: absolute; top: 14px; right: 120px;
-  color: rgba(255,255,255,.15); font-size: 16px; letter-spacing: 8px;
-  pointer-events: none; white-space: nowrap;
-}
-.dash-header::after {
-  content: '❄   ❄';
-  position: absolute; bottom: 26px; right: 140px;
-  color: rgba(255,255,255,.10); font-size: 12px; letter-spacing: 14px;
-  pointer-events: none;
-}
-.dash-header .deco-circle {
-  position: absolute; right: -20px; bottom: -30px;
-  width: 200px; height: 200px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(74,144,217,.25) 0%, transparent 70%);
-  pointer-events: none;
-}
+.dash-header { background: linear-gradient(145deg, #08173d 0%, #112a72 45%, #1e4db5 100%); border-radius: 24px; padding: 22px 20px; margin-bottom: 14px; position: relative; overflow: hidden; min-height: 200px; }
+.dash-header::before { content: '❄  ❄  ❄'; position: absolute; top: 14px; right: 120px; color: rgba(255,255,255,.15); font-size: 16px; letter-spacing: 8px; pointer-events: none; white-space: nowrap; }
+.dash-header::after { content: '❄   ❄'; position: absolute; bottom: 26px; right: 140px; color: rgba(255,255,255,.10); font-size: 12px; letter-spacing: 14px; pointer-events: none; }
+.dash-header .deco-circle { position: absolute; right: -20px; bottom: -30px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(74,144,217,.25) 0%, transparent 70%); pointer-events: none; }
 .h-brand { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-.h-brand-box {
-  background: white; border-radius: 10px;
-  padding: 5px 10px; display: flex; align-items: center; gap: 6px;
-}
+.h-brand-box { background: white; border-radius: 10px; padding: 5px 10px; display: flex; align-items: center; gap: 6px; }
 .h-brand-name { font-size: 14px; font-weight: 900; color: var(--navy); letter-spacing: .5px; line-height: 1; }
 .h-brand-sub { font-size: 8px; color: var(--blue2); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; line-height: 1; }
 .h-title { color: white; font-size: 38px; font-weight: 900; line-height: 1; margin-bottom: 3px; letter-spacing: -.5px; }
 .h-sub { color: rgba(255,255,255,.6); font-size: 13px; font-weight: 500; margin-bottom: 1px; }
 .h-unit { color: #7eb8ff; font-weight: 800; font-size: 15px; }
 .h-pills { margin-top: 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.date-pill {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18);
-  border-radius: 20px; padding: 5px 13px;
-  color: rgba(255,255,255,.9); font-size: 12px; font-weight: 600;
-}
-.live-pill {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: rgba(22,163,74,.2); border: 1px solid rgba(22,163,74,.4);
-  color: #4ade80; border-radius: 20px; padding: 4px 11px;
-  font-size: 11px; font-weight: 700;
-}
+.date-pill { display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: 20px; padding: 5px 13px; color: rgba(255,255,255,.9); font-size: 12px; font-weight: 600; }
+.live-pill { display: inline-flex; align-items: center; gap: 5px; background: rgba(22,163,74,.2); border: 1px solid rgba(22,163,74,.4); color: #4ade80; border-radius: 20px; padding: 4px 11px; font-size: 11px; font-weight: 700; }
 .live-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; animation: pulse 1.5s ease-in-out infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
 .mascot { position: absolute; right: -8px; bottom: 0; height: 185px; filter: drop-shadow(-6px 4px 16px rgba(0,0,0,.35)); object-fit: contain; }
-
 .kpi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 12px; }
 .kpi-card { background: white; border-radius: 18px; padding: 14px 10px; text-align: center; box-shadow: 0 2px 10px rgba(26,60,143,.09); }
 .kpi-icon { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; margin: 0 auto 8px; }
-.ki-money { background: #ddeafc; }
-.ki-reach { background: #d4f0e4; }
-.ki-eye   { background: #ede9fc; }
+.ki-money { background: #ddeafc; } .ki-reach { background: #d4f0e4; } .ki-eye { background: #ede9fc; }
 .kpi-label { font-size: 10px; color: var(--text2); margin-bottom: 3px; }
 .kpi-value { font-size: 15px; font-weight: 900; color: var(--navy); }
-
 .section { background: white; border-radius: 20px; padding: 18px 16px; margin-bottom: 12px; box-shadow: 0 2px 10px rgba(26,60,143,.07); }
 .sec-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 14px; display: flex; align-items: center; gap: 7px; }
-
 .camp-item { display: flex; align-items: flex-start; gap: 11px; padding: 10px 0; border-bottom: 1px solid var(--gray); }
 .camp-item:last-child { border-bottom: none; padding-bottom: 0; }
 .camp-icon { width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 17px; color: white; }
@@ -135,7 +67,6 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #dde6f5; min-heig
 .camp-metrics { display: flex; gap: 5px; align-items: center; font-size: 11px; color: var(--text2); flex-wrap: wrap; }
 .camp-metrics strong { color: var(--text); }
 .sep { color: #d1d5db; }
-
 .meta-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
 .meta-logo { width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0; background: linear-gradient(135deg,#0668E1,#0090FF); display: flex; align-items: center; justify-content: center; font-size: 22px; color: white; font-weight: 900; }
 .meta-info-label { font-size: 11px; color: var(--text2); }
@@ -143,13 +74,10 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #dde6f5; min-heig
 .resumo-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; background: var(--gray); border-radius: 14px; padding: 13px 10px; }
 .rg-label { font-size: 9px; color: var(--text2); margin-bottom: 2px; text-transform: uppercase; letter-spacing: .5px; }
 .rg-value { font-size: 12px; font-weight: 900; color: var(--navy); }
-
 .ad-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--gray); }
 .ad-item:last-child { border-bottom: none; padding-bottom: 0; }
 .ad-medal { width: 28px; height: 28px; min-width: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 13px; }
-.m1 { background: #ffd700; color: #7a5a00; }
-.m2 { background: #c8c8c8; color: #3a3a3a; }
-.m3 { background: #cd7f32; color: white; }
+.m1 { background: #ffd700; color: #7a5a00; } .m2 { background: #c8c8c8; color: #3a3a3a; } .m3 { background: #cd7f32; color: white; }
 .ad-thumb { width: 56px; height: 56px; min-width: 56px; border-radius: 12px; object-fit: cover; background: var(--gray); }
 .ad-thumb-ph { width: 56px; height: 56px; min-width: 56px; border-radius: 12px; background: var(--blight); display: flex; align-items: center; justify-content: center; font-size: 24px; }
 .ad-info { flex: 1; min-width: 0; }
@@ -157,21 +85,17 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #dde6f5; min-heig
 .ad-metrics { display: grid; grid-template-columns: repeat(4,1fr); gap: 3px; }
 .am-l { font-size: 9px; color: var(--text2); text-decoration: underline; }
 .am-v { font-size: 11px; font-weight: 800; color: var(--text); }
-
 .ins-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; }
 .ins-card { background: var(--gray); border-radius: 14px; padding: 13px 12px; }
-.ins-ico   { font-size: 20px; margin-bottom: 5px; }
+.ins-ico { font-size: 20px; margin-bottom: 5px; }
 .ins-label { font-size: 10px; color: var(--text2); margin-bottom: 2px; }
-.ins-name  { font-size: 10px; font-weight: 700; color: var(--text); margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ins-name { font-size: 10px; font-weight: 700; color: var(--text); margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ins-value { font-size: 15px; font-weight: 900; color: var(--navy); }
-
 .foot-note { font-size: 10px; color: #aaa; text-align: center; margin-top: 6px; }
-
 .export-wrap { max-width: 440px; margin: 0 auto; padding: 0 12px 44px; }
 .btn-export { background: linear-gradient(135deg, var(--navy), var(--blue2)); color: white; border: none; padding: 15px; border-radius: 16px; font-size: 15px; font-weight: 800; cursor: pointer; width: 100%; box-shadow: 0 4px 14px rgba(26,60,143,.3); }
 .btn-export:hover { opacity: .92; }
 .btn-export:disabled { opacity: .5; cursor: default; }
-
 .state-box { text-align: center; padding: 56px 24px; color: var(--text2); }
 .state-ico { font-size: 48px; margin-bottom: 14px; }
 .state-box p { font-size: 14px; line-height: 1.7; }
@@ -300,13 +224,13 @@ async function fetchAll(acc, preset) {
   const [totals, camps, adsIns] = await Promise.all([
     gql(`${act}/insights`, { fields:'spend,reach,impressions', date_preset:preset }),
     gql(`${act}/campaigns`, {
-      effective_status: '["ACTIVE","PAUSED","ARCHIVED","DELETED","IN_PROCESS","WITH_ISSUES"]',
+      effective_status: '["ACTIVE","PAUSED","ARCHIVED","DELETED"]',
       fields: `name,objective,insights.date_preset(${preset}){spend,reach,impressions}`,
       limit: 30
     }),
     gql(`${act}/insights`, {
       level:'ad', fields:'ad_id,ad_name,spend,reach,impressions,clicks',
-      date_preset:preset, sort:'reach_descending', limit:5
+      date_preset:preset, sort:'["reach_descending"]', limit:5
     })
   ]);
 
@@ -410,10 +334,10 @@ function render(acc, {summary, campaigns, topAds}) {
       </div>`).join('');
 
   const insCards = [
-    {ico:'🏆', label:'Melhor anúncio',       name:best?.ad_name||'—',    value:BRL(best?.spend)},
-    {ico:'👆', label:'Maior vol. de cliques', name:topClk?.ad_name||'—', value:`${N(topClk?.clicks)} cliques`},
-    {ico:'👥', label:'Maior alcance',         name:topRch?.ad_name||'—', value:`${N(topRch?.reach)} pessoas`},
-    {ico:'👁️', label:'Mais impressões',      name:topImp?.ad_name||'—', value:`${N(topImp?.impressions)} imp.`},
+    {ico:'🏆', label:'Melhor anúncio',         name:best?.ad_name||'—',     value:BRL(best?.spend)},
+    {ico:'👆', label:'Maior vol. de cliques',   name:topClk?.ad_name||'—',  value:`${N(topClk?.clicks)} cliques`},
+    {ico:'👥', label:'Maior alcance',            name:topRch?.ad_name||'—',  value:`${N(topRch?.reach)} pessoas`},
+    {ico:'👁️', label:'Mais impressões',         name:topImp?.ad_name||'—',  value:`${N(topImp?.impressions)} imp.`},
   ].map(c=>`<div class="ins-card">
     <div class="ins-ico">${c.ico}</div>
     <div class="ins-label">${c.label}</div>
@@ -442,18 +366,15 @@ function render(acc, {summary, campaigns, topAds}) {
       </div>
       <img class="mascot" src="./mascote-berrys.png" alt="" onerror="this.style.display='none'">
     </div>
-
     <div class="kpi-grid">
       <div class="kpi-card"><div class="kpi-icon ki-money">💰</div><div class="kpi-label">Investimento</div><div class="kpi-value">${BRL(summary.spend)}</div></div>
       <div class="kpi-card"><div class="kpi-icon ki-reach">👥</div><div class="kpi-label">Alcance</div><div class="kpi-value">${N(summary.reach)}</div></div>
       <div class="kpi-card"><div class="kpi-icon ki-eye">👁️</div><div class="kpi-label">Impressões</div><div class="kpi-value">${N(summary.impressions)}</div></div>
     </div>
-
     <div class="section">
       <div class="sec-title">📣 Campanhas veiculadas</div>
       ${campsHtml}
     </div>
-
     <div class="section">
       <div class="sec-title">∞ Resumo da conta Meta Ads</div>
       <div class="meta-row">
@@ -467,18 +388,15 @@ function render(acc, {summary, campaigns, topAds}) {
         <div><div class="rg-label">Período</div><div class="rg-value" style="font-size:10px">${periodShort()}</div></div>
       </div>
     </div>
-
     <div class="section">
       <div class="sec-title">🏆 Melhores anúncios</div>
       ${adsHtml}
     </div>
-
     ${topAds.length > 0 ? `
     <div class="section">
       <div class="sec-title">⚡ Insights rápidos</div>
       <div class="ins-grid">${insCards}</div>
     </div>` : ''}
-
     <p class="foot-note">Relatório referente ao período de ${dateLabel()}.</p>
   </div>`;
 }
